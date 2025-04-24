@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why watching - Akira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('./immagini/Senzanome.png') center center/cover no-repeat;
+      color: #f1f1f1;
+      overflow-x: hidden;
+      background-blur: 10px;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    header h1 {
+      font-size: 7rem;
+      color: #ff004f;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      color: #888;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #00ffff;
+      border-left: 5px solid #ff004f;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    section p, section li {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .img-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      justify-items: center;
+    }
+
+    .img-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease-in-out;
+      border: 3px solid rgba(255, 0, 79, 0.7); /* Light red border */
+    }
+
+    .img-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  border: 3px solid rgba(255, 0, 79, 0.7);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.scene img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 0, 79, 0.7);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out;
+  display: none; /* Nasconde la GIF di default */
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.scene:hover img {
+  display: block;      /* Mostra la GIF */
+  animation: none;     /* Evita eventuali glitch */
+  cursor: none;        /* Nasconde il cursore */
+}
+
+/* Scrollbar HUD Minimal style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-left: 1px solid #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ff; /* Cyan base */
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
+  box-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff004f; /* Switch to magenta on hover */
+  box-shadow: 0 0 6px #ff004f, 0 0 12px #ff004f;
+}
+
+
+body, html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><circle cx="16" cy="16" r="2" fill="%23ff004f"/><line x1="0" y1="16" x2="12" y2="16" stroke="%2300ffff" stroke-width="2"/><line x1="20" y1="16" x2="32" y2="16" stroke="%2300ffff" stroke-width="2"/><line x1="16" y1="0" x2="16" y2="12" stroke="%2300ffff" stroke-width="2"/><line x1="16" y1="20" x2="16" y2="32" stroke="%2300ffff" stroke-width="2"/></svg>') 16 16, auto;
+}
+
+.scroll-top {
+  margin-left: 0; 
+  font-size: 2rem;
+  color: #0ff;
+  margin-top: 20px;
+  animation: pulse-glow 1.5s infinite;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.scroll-top:hover {
+  transform: scale(1.2) rotate(5deg);
+  color: #ff004f;
+  text-shadow: 0 0 5px #ff004f, 0 0 10px #ff004f;
+}
+
+footer .scroll-top {
+  display: inline-block;
+  text-align: left;
+}
+
+
+@keyframes pulse-glow {
+  0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+  50% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
+  100% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+}
+
+/* Stile generale del menu */
+.cyberpunk-menu {
+  background-color: #0f0f0f;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #00ffff;
+}
+
+/* Stile della lista */
+.cyberpunk-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+/* Stile dei link */
+.cyberpunk-menu a {
+  color: #00ffff;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Effetto al passaggio del mouse */
+.cyberpunk-menu a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.cyberpunk-menu a:hover::after {
+  width: 100%;
+}
+
+.cyberpunk-menu a:hover {
+  color: red;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>Akira</h1>
+    <p>A cinematic landmark in anime and cyberpunk culture</p>
+  </header>
+
+  <nav class="cyberpunk-menu">
+    <ul>
+      <li><a href="#sezione1">PLOT</a></li>
+      <li><a href="#sezione2">MAIN CHARACTERS</a></li>
+      <li><a href="#sezione3">INTRODUCTION</a></li>
+      <li><a href="#sezione4">ICONIC SCENES</a></li>
+      <li><a href="https://www.primevideo.com/detail/Akira/0NPYVVH202FKKAOFQRY7AWWZ8R">WATCH NOW</a></li>
+    </ul>
+  </nav>
+  
+
+  <div class="container">
+
+    <section>
+      <div class="video-wrapper">
+        <video id="akira-video" muted loop playsinline>
+          <source src="./immagini/videoplayback.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+      </div>
+      <p style="text-align: center; font-size: 0.7rem;">click the 2nd key to start the video</p>
+      <p style="text-align: center; font-size: 0.7rem;">click one time to activate the audio</p>
+    </section>
+    
+
+    
+
+    
+
+    <section id="sezione1">
+      <h2 >Plot</h2>
+      <p>
+        The year is 2019. Following a cataclysmic explosion that obliterated Tokyo and ignited World War III, a new city has risen from the ruins—<strong>Neo-Tokyo</strong>, a dystopian metropolis teeming with unrest. Corruption runs deep in the government, the streets are ruled by biker gangs, and society teeters on the edge of collapse. Amidst the turmoil, a young gang member named <strong>Tetsuo Shima</strong> encounters a mysterious child with psychic abilities during a high-speed chase, setting off a chain of events that will alter the fate of the city.
+      </p>
+      <p>
+        After the accident, Tetsuo begins to manifest terrifying supernatural powers. What starts as a chance to stand tall after a life of feeling weak and overlooked quickly turns into a nightmare of escalating violence, paranoia, and madness. His abilities grow beyond his control, drawing the attention of the military, secretive government scientists, and a resistance group determined to uncover the truth behind a powerful, god-like figure known only as <strong>Akira</strong>.
+      </p>
+      <p>
+        At the heart of this escalating chaos is <strong>Shotaro Kaneda</strong>, Tetsuo's childhood friend and the charismatic leader of their biker gang. Determined to save Tetsuo—or stop him—Kaneda dives deep into the conspiracy surrounding Akira, navigating brutal military crackdowns, political intrigue, and surreal confrontations with psychic children known as the Espers.
+      </p>
+      <p>
+        As Tetsuo spirals into uncontrollable transformation and the government prepares to strike, Neo-Tokyo is pushed toward the brink of annihilation once more. The final confrontation unfolds in a decaying Olympic stadium—a symbol of hope now turned battlefield—where the true nature of Akira is revealed, and the lines between destruction and rebirth, chaos and transcendence, are violently blurred.
+      </p>
+      <p>
+        <em>Akira</em> is more than just a tale of psychic powers and rebellion—it's a philosophical exploration of human evolution, technological ambition, and the fragile line that separates progress from ruin.
+      </p>
+    </section>
+    
+
+    <section id="sezione2">
+      <h2 >Main Characters</h2>
+      <div class="img-gallery">
+        <div class="character">
+          <img src="./immagini/kaneda.webp" alt="Kaneda">
+          <h3>Kaneda Shotaro</h3>
+          <p>Kaneda is the leader of a rebellious biker gang in the dystopian city of Neo-Tokyo. He is characterized by his confidence, impulsiveness, and strong sense of loyalty to his friends, especially to his childhood friend, Tetsuo. Despite his rough exterior, Kaneda shows moments of deep care and compassion, especially as he strives to save Tetsuo from his destructive path. His iconic red jacket and motorcycle are symbols of his rebellious nature and his determination to fight against authority.</p>
+        </div>
+        
+        <div class="character">
+          <img src="./immagini/tetsuo.webp" alt="Tetsuo">
+          <h3>Tetsuo Shima</h3>
+          <p>Tetsuo begins as a member of Kaneda's gang, but his life changes drastically when he gains overwhelming psychic powers. Tetsuo’s transformation is the central arc of the film, as he evolves from a vulnerable, insecure young man into a powerful and dangerous force. His desire for recognition and power, coupled with his fear of losing control, ultimately drives him to madness and destruction. Tetsuo’s journey is tragic, reflecting themes of power, fear, and loss of humanity.</p>
+        </div>
+    
+        <div class="character">
+          <img src="./immagini/kei.webp" alt="Kei">
+          <h3>Kei</h3>
+          <p>Kei is a member of an underground resistance group in Neo-Tokyo. She plays a significant role in the story as she becomes involved with Kaneda and Tetsuo's struggle. Her strength, determination, and belief in the cause are key to the film's narrative. Kei represents the hope for a better future amidst the decay and corruption of the city. She also shares a close bond with Kaneda as they both fight against the forces that control Neo-Tokyo.</p>
+        </div>
+    
+        <div class="character">
+          <img src="./immagini/akira.webp" alt="Akira">
+          <h3>Akira</h3>
+          <p>Akira is the mysterious figure at the center of the story. Although he does not appear much throughout the film, his legacy and powers profoundly affect the events. Akira's psychic abilities are unparalleled, and he holds the key to the destruction of Neo-Tokyo. The film builds a complex narrative around his identity, his potential, and his influence on both the protagonists and the city itself.</p>
+        </div>
+    
+        <div class="character">
+          <img src="./immagini/colonel.webp" alt="Colonel Shikishima">
+          <h3>Colonel Shikishima</h3>
+          <p>The Colonel is a high-ranking military officer who plays a pivotal role in the film. His focus is on controlling the psychic powers, particularly those of Tetsuo and Akira, in order to stabilize the chaotic political environment. Shikishima represents the oppressive government and military structure that seeks to manipulate these extraordinary powers for their own purposes. His character is one of authority and control, often clashing with the rebellious forces in Neo-Tokyo.</p>
+        </div>
+    
+        <div class="character">
+          <img src="./immagini/ryu.webp" alt="Ryu">
+          <h3>Ryu</h3>
+          <p>Ryu is a member of the resistance group alongside Kei. He is dedicated to exposing the government's secrets and helping bring justice to the oppressed citizens of Neo-Tokyo. Ryu is a compassionate and resourceful character who seeks to prevent the military from taking full control of the psychic powers. His loyalty to the cause and to his comrades make him a vital ally in the fight against corruption.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sezione3">
+      <h2 >Introduction</h2>
+      <p>Akira, directed by Katsuhiro Otomo, is set in the post-apocalyptic city of Neo-Tokyo following a mysterious explosion. The film blends cyberpunk aesthetics, political commentary, and philosophical depth. With its revolutionary animation and narrative complexity, Akira has earned a place as one of the most influential animated films of all time. It’s a must-watch for any fan of futuristic dystopias, philosophical explorations, and mind-bending visuals.</p>
+    </section>
+
+    <section id="sezione4">
+      <h2 >Iconic Scenes <p style="font-size: 0.7rem;">slide to reveal</p></h2>
+      <div class="img-gallery">
+        <div class="scene">
+          <img src="./immagini/slide.gif" alt="Kaneda on his motorcycle">
+          <h3>The Motorcycle Slide</h3>
+          <p>...</p>
+          <p>This moment captures Kaneda's rebellious spirit as he slides his motorcycle through the streets of Neo-Tokyo, symbolizing his defiance against authority and the chaotic nature of the city. The sleek design of the motorcycle and the dynamic motion make this one of the most memorable scenes in animation history.</p>
+        </div>
+        <div class="scene">
+          <img src="./immagini/trans.gif" alt="Tetsuo's Transformation">
+          <h3>Tetsuo's Transformation</h3>
+          <p>...</p>
+          <p>In this scene, Tetsuo begins his descent into madness after his psychic powers manifest. His transformation, both physically and mentally, represents the overwhelming consequences of uncontrolled power. The grotesque nature of his mutation is a key visual element in the film, illustrating themes of evolution and the loss of humanity.</p>
+        </div>
+        <div class="scene">
+          <img src="./immagini/destr.gif" alt="Neo-Tokyo Destruction">
+          <h3>The Destruction of Neo-Tokyo</h3>
+          <p>...</p>
+          <p>The climactic destruction of Neo-Tokyo during Tetsuo's rampage is a powerful symbol of the consequences of unchecked scientific experimentation and political corruption. The city crumbles under the weight of his psychic abilities, illustrating the collapse of society in the face of chaos and power.</p>
+        </div>
+        <div class="scene">
+          <img src="./immagini/awak.gif" alt="The Akira Awakening">
+          <h3>The Awakening of Akira</h3>
+          <p>...</p>
+          <p>The moment Akira's powers are unleashed is one of the most visually stunning scenes in the film. This event marks the culmination of the film's philosophical questions about the nature of human evolution and the limits of power. The explosion of energy and the eerie stillness that follows symbolize the unpredictable and uncontrollable force that Akira represents.</p>
+        </div>
+        <div class="scene">
+          <img src="./immagini/kidnapping.gif" alt="The Kidnapping of Kaneda">
+          <h3>The Kidnapping of Kaneda</h3>
+          <p>...</p>
+          <p>In this scene, Kaneda is kidnapped by the government and subjected to dangerous experiments. This marks a significant point in the plot, highlighting the deep corruption of the government and the lengths to which they will go to control the power that is growing within the city. Kaneda’s kidnapping also drives the plot forward, propelling the characters into the heart of the mystery surrounding Akira.</p>
+        </div>
+        <div class="scene">
+          <img src="./immagini/stadium.gif" alt="The Battle at the Stadium">
+          <h3>The Battle at the Stadium</h3>
+          <p>...</p>
+          <p>This intense battle takes place at the stadium, where Tetsuo faces off against the military and other forces that are trying to stop him. As his psychic powers rage out of control, the stadium becomes a battleground filled with destruction and chaos. This scene highlights Tetsuo’s inner conflict and the dangerous power he has come to possess, making it one of the most powerful action moments in the film.</p>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+  </div>
+
+  <footer>
+    <p><div class="scroll-top" onclick="scrollToTop()">
+      ↑
+    </div>                                            Akira (1988) - Directed by Katsuhiro Otomo | Made by Davide Francescon</p>
+  </footer>
+  <script>
+    const video = document.getElementById('akira-video');
+  
+    video.addEventListener('click', () => {
+      video.muted = !video.muted;
+    });
+
+    video.addEventListener('contextmenu', function (e) {
+  e.preventDefault(); // evita l'apertura del menu contestuale
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});
+
+    
+
+    function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+
+
+
+  </script>
+  
+</body>
+</html>
+
